@@ -9,14 +9,14 @@ WORKDIR /app
 # Copy the application files to the container
 COPY . /app
 
+# Install the required dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
 # Change the ownership of the application files to the "flasky" user
 RUN chown -R flasky:flasky /app
 
 # Switch to the "flasky" user
 USER flasky
 
-# Install the required dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
 # Run server.py using gunicorn
-CMD ["gunicorn", "server:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "server:app"]
