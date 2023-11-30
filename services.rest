@@ -4,3 +4,10 @@ Content-Type: application/json
 {
     "email": "test@test.com"
 }
+###
+POST http://localhost:5051/add
+Content-Type: application/json
+
+{
+    "test": "empty"
+}
