@@ -1,23 +1,22 @@
 version: '3.8'
 services:
-  cart-service:
+  email-service:
     build:
-      context: ./cart-service
+      context: ./email-service
       dockerfile: Dockerfile
-    # Add any additional configuration for the cart-service
+    ports:
+      - 5050:5000
+    
 
   checkout-service:
     build:
       context: ./checkout-service
       dockerfile: Dockerfile
-    # Add any additional configuration for the checkout-service
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    # Add any additional configuration for the frontend
 
   mongodb:
     image: mongo
-    # Add any additional configuration for the MongoDB service
