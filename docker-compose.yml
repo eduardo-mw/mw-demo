@@ -1,15 +1,32 @@
-version: '3.8'
+version: "3.8"
 services:
+  mw-agent:
+    image: ghcr.io/middleware-labs/mw-host-agent:master
+    environment:
+      - MW_API_KEY=<your-api-key>
+      - MW_TARGET=<your-target>
+    ports:
+      - 9319:9319
+      - 9320:9320
+      - 8006:8006
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/log:/var/log
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      - /tmp:/tmp
+    privileged: true
+    network_mode: host
+
   email-service:
     build:
       context: ./email-service
       dockerfile: Dockerfile
     ports:
       - 5050:5000
-    
-  checkout-service:
+
+  cart-service:
     build:
-      context: ./checkout-service
+      context: ./cart-service
       dockerfile: Dockerfile
     ports:
       - 5051:5000
@@ -18,6 +35,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    ports:
+      - 5052:5000
 
   mongodb:
     image: mongo

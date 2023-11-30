@@ -1,4 +1,5 @@
 from flask import Flask, request
+from email_sender import send_email
 
 app = Flask(__name__)
 
@@ -8,6 +9,7 @@ def home():
     if request.method == "POST":
         if request.is_json:
             email = request.json["email"]
+            send_email(email)
             return {"email": email}
         else:
             return {"status": "Invalid JSON format"}, 400
