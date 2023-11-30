@@ -1,5 +1,9 @@
 from flask import Flask, request
 from email_sender import send_email
+import logging 
+from middleware import MwTracker
+
+tracker=MwTracker()
 
 app = Flask(__name__)
 

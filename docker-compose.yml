@@ -28,6 +28,8 @@ services:
     build:
       context: ./cart-service
       dockerfile: Dockerfile
+    environment:
+      - MW_AGENT_SERVICE=172.17.0.1
     ports:
       - 5051:5000
 

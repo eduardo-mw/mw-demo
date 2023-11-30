@@ -11,6 +11,7 @@ COPY . /app
 
 # Install the required dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install middleware-apm
 
 # Change the ownership of the application files to the "flasky" user
 RUN chown -R flasky:flasky /app
