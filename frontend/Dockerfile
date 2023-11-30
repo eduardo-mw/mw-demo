@@ -1,30 +1,29 @@
+# Use the official Node.js runtime as the base image
+FROM node:21 as build
 
-# Use the official nginx image as the base image
-FROM nginx
-
-# Install Node.js and npm
-RUN apt-get update && apt-get install -y curl && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
-
-# Set the working directory to /app
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the working directory
-COPY package*.json ./
+# Copy package.json and package-lock.json to the working directory
+COPY ./shop/package*.json ./
 
-# Install the dependencies
+# Install dependencies
 RUN npm install
 
-# Copy the source code to the working directory
-COPY . .
+# Copy the entire application code to the container
+COPY ./shop .
 
-# Build the React app
+# Build the React app for production
 RUN npm run build
 
-# Copy the build files from the React app to the nginx default public directory
-COPY build /usr/share/nginx/html/shop
+# Use Nginx as the production server
+FROM nginx:alpine
 
-# Expose port 80 to allow incoming traffic
+# Copy the built React app to Nginx's web server directory
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Expose port 80 for the Nginx server
 EXPOSE 80
 
-# Start nginx server when the container starts
+# Start Nginx when the container runs
 CMD ["nginx", "-g", "daemon off;"]
