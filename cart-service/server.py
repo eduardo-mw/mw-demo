@@ -13,12 +13,12 @@ def home():
 
 @app.route("/add", methods=["POST"])
 def about():
-    return {"status": "good"}
+    return {"added": "<items added>"}
 
 
 @app.route("/remove", methods=["POST"])
 def contact():
-    return {"status": "good"}
+    return {"removed": "<items removed>"}
 
 
 if __name__ == "__main__":
