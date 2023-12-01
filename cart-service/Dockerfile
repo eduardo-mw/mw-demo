@@ -11,6 +11,10 @@ WORKDIR /app
 # Copy the application files to the container
 COPY . /app
 
+# Install these for ARM
+RUN apt update && apt upgrade -y
+RUN apt-get install gcc python3-dev -y
+
 # Install the required dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install middleware-apm
