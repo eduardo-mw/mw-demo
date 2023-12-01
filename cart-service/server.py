@@ -1,8 +1,8 @@
 from flask import Flask, request
-import logging 
+import logging
 from middleware import MwTracker
 
-tracker=MwTracker()
+tracker = MwTracker()
 app = Flask(__name__)
 
 
