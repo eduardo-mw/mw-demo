@@ -14,6 +14,7 @@ def home():
         if request.is_json:
             email = request.json["email"]
             send_email(email)
+            logging.info("Email sent to %s", email)
             return {"email": email}
         else:
             return {"status": "Invalid JSON format"}, 400

@@ -19,4 +19,4 @@ RUN chown -R flasky:flasky /app
 USER flasky
 
 # Run server.py using gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "server:app"]
+CMD ["MIDDLEWARE_CONFIG_FILE=./middleware.ini", "middleware-apm", "run", "gunicorn", "-b", "0.0.0.0:5000", "server:app"]
