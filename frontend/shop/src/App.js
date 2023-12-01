@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import {
   BrowserRouter as Router,
   Routes,
@@ -21,6 +22,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
