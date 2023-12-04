@@ -5,9 +5,5 @@ Content-Type: application/json
     "email": "test@test.com"
 }
 ###
-POST http://localhost:5051/add
+POST http://localhost:5051/cart
 Content-Type: application/json
-
-{
-    "test": "empty"
-}
