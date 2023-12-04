@@ -1,8 +1,11 @@
 from flask import Flask, request
 import logging
-from middleware import MwTracker
+import os
 
-tracker = MwTracker()
+if os.environ.get("ENV", "dev") == "production":
+    from middleware import MwTracker
+    tracker = MwTracker()
+
 app = Flask(__name__)
 
 
