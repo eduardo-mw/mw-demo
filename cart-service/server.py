@@ -1,47 +1,75 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import requests
 import logging
 import os
+from pymongo import MongoClient
 
 if os.environ.get("ENV", "dev") == "prod":
     from middleware import MwTracker
 
     tracker = MwTracker()
+    db_host = "mongo"
+    db_port = 27017
+else:
+    db_host = "localhost"
+    db_port = 5053
 
 app = Flask(__name__)
+app.secret_key = "asdfji281lf9jf0fj02"
+
+# Schema for the cart
+# {
+#    "_id": "fafji10jrrja-af-fj",
+#    "session_id": "asdfji281lf9jf0fj02",
+#    "items": [
+#       {"itemID": "<itemID>", "quantity": "<quantity>", "price": "<price>"},
+#       {"itemID": "<itemID>", "quantity": "<quantity>", "price": "<price>"},
+#              ]
+# }
 
 
-@app.route("/cart", methods=["POST"])
-def home():
+# Create a MongoDB client and connect to the database
+client = MongoClient(db_host, db_port)
+db = client["cart_db"]
+carts = db["carts"]
+
+
+@app.route("/cart/<session_id>", methods=["GET"])
+def home(session_id):
     logging.info("Cart Request received")
 
-    # TODO: Move this to the appropriate endpoint when made
-    try:
-        email_status = requests.post(
-            "http://email-service:5000/send", json={"email": "johndoe@gmail.com"}
-        ).json()
-    except Exception as e:
-        logging.error("Error while sending email: %s", e)
-        email_status = {"email": e}
+    db_result = carts.find_one({"sessionID": session_id})
+    if db_result is None:
+        return {"cart": None}, 404
 
     return {
-        "session_id": "<session_id>",
-        "items": [{"item_id": "<item_id>", "quantity": "<quantity>"}],
-        "email-status": email_status,
-    }
+        "cart": {
+            "sessionID": db_result["sessionID"],
+            "items": db_result["items"],
+        }
+    }, 200
 
 
 @app.route("/add", methods=["POST"])
 def about():
-    logging.info("Add Request received")
-    return {"added": "<items added>"}
+    session_id = request.json["sessionID"]
+    item = request.json["item"]
 
+    cart = carts.find_one({"sessionID": session_id})
+    if cart:
+        items = cart["items"]
+        for i, cart_item in enumerate(items):
+            if cart_item["itemID"] == item["itemID"]:
+                items[i]["quantity"] = int(items[i]["quantity"]) + int(item["quantity"])
+                break
+        else:
+            items.append(item)
+        carts.update_one({"sessionID": session_id}, {"$set": {"items": items}})
+    else:
+        carts.insert_one({"sessionID": session_id, "items": [item]})
 
-@app.route("/remove", methods=["POST"])
-def contact():
-    logging.info("Remove Request received")
-    return {"removed": "<items removed>"}
+    return {"sessionID": session_id, "itemAdded": item}, 200
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5051, debug=True)
