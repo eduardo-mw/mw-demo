@@ -44,6 +44,3 @@ services:
     ports:
       - 5052:80
     network_mode: bridge
-
-  mongodb:
-    image: mongo
