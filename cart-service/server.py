@@ -2,7 +2,7 @@ from flask import Flask, request
 import logging
 import os
 
-if os.environ.get("ENV", "dev") == "production":
+if os.environ.get("ENV", "dev") == "prod":
     from middleware import MwTracker
     tracker = MwTracker()
 
