@@ -20,6 +20,7 @@ services:
   email-service:
     environment:
       - MW_AGENT_SERVICE=172.17.0.1
+      - ENV=dev
     build:
       context: ./email-service
       dockerfile: Dockerfile
@@ -30,6 +31,7 @@ services:
   cart-service:
     environment:
       - MW_AGENT_SERVICE=172.17.0.1
+      - ENV=dev
     build:
       context: ./cart-service
       dockerfile: Dockerfile
