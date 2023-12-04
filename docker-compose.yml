@@ -26,7 +26,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5050:5000
-    network_mode: bridge
 
   cart-service:
     environment:
@@ -37,7 +36,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5051:5000
-    network_mode: bridge
 
   frontend:
     build:
@@ -45,4 +43,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5052:80
-    network_mode: bridge
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
