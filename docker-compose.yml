@@ -20,6 +20,7 @@ services:
   email-service:
     environment:
       - MW_AGENT_SERVICE=172.17.0.1
+      - ENV=dev
     build:
       context: ./email-service
       dockerfile: Dockerfile
@@ -29,6 +30,7 @@ services:
   cart-service:
     environment:
       - MW_AGENT_SERVICE=172.17.0.1
+      - ENV=dev
     build:
       context: ./cart-service
       dockerfile: Dockerfile
@@ -43,4 +45,6 @@ services:
       - 5052:80
 
   mongodb:
-    image: mongo
+    image: mongo:latest
+    ports:
+      - 5053:27017

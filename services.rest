@@ -4,10 +4,15 @@ Content-Type: application/json
 {
     "email": "test@test.com"
 }
+
+###
+GET http://localhost:5051/cart/asdfjl102938
+
 ###
 POST http://localhost:5051/add
 Content-Type: application/json
 
 {
-    "test": "empty"
+    "sessionID": "asdfjl102938",
+    "item": {"itemID": "1", "itemName":"Banana", "quantity": 1, "price": 1.00}
 }

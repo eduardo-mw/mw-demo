@@ -1,9 +1,11 @@
 from flask import Flask, request
 from email_sender import send_email
 import logging
-from middleware import MwTracker
+import os
 
-tracker = MwTracker()
+if os.environ.get("ENV", "dev") == "prod":
+    from middleware import MwTracker
+    tracker = MwTracker()
 
 app = Flask(__name__)
 
@@ -23,4 +25,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5050, debug=True)
