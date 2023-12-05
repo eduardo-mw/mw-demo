@@ -1,1 +1,1 @@
-(()=>{"use strict";var a=document.querySelectorAll(".needs-validation");Array.from(a).forEach(e=>{e.addEventListener("submit",a=>{e.checkValidity()||(a.preventDefault(),a.stopPropagation()),e.classList.add("was-validated")},!1)})})();
+(()=>{"use strict";const t=document.querySelectorAll(".needs-validation");Array.from(t).forEach((t=>{t.addEventListener("submit",(e=>{t.checkValidity()||(e.preventDefault(),e.stopPropagation()),t.classList.add("was-validated")}),!1)}))})();
