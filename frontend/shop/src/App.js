@@ -9,7 +9,6 @@ import {
 
 import Home from "./pages";
 import Checkout from "./pages/checkout";
-import Products from "./pages/products";
 import ThankYou from "./pages/thankyou";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
