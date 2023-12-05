@@ -41,13 +41,13 @@ const paths = {
 		basetemp: './.temp',
 	},
 	dist: {
-		basedist: './dist',
-		js: './dist/assets/js',
-		vendorJs: './dist/assets/js/vendors',
-		images: './dist/assets/images',
-		css: './dist/assets/css',
-		fonts: './dist/assets/fonts',
-		libs: './dist/assets/libs',
+		basedist: '../shop/src/assets',
+		js: '../shop/src/assets/js',
+		vendorJs: '../shop/src/assets/js/vendors',
+		images: '../shop/src/assets/images',
+		css: '../shop/src/assets/css',
+		fonts: '../shop/src/assets/fonts',
+		libs: '../shop/src/assets/libs',
 	},
 };
 
@@ -123,7 +123,7 @@ function cleanTemp(callback) {
 
 // Clean Dist folder
 function cleanDist(callback) {
-	del.sync(paths.dist.basedist);
+	del.sync(paths.dist.basedist, { force: true });
 	callback();
 }
 
@@ -154,7 +154,7 @@ function watchTask() {
 exports.default = series(fileincludeTask, browsersyncServe, watchTask);
 
 // Build Task for Dist
-exports.build = series(parallel(cleanDist), html, images, fonts, vendorJs, copyLibs, cleanTemp);
+exports.build = series(parallel(cleanDist), images, fonts, vendorJs, copyLibs, cleanTemp);
 
 // export tasks
 exports.scss = scss;
