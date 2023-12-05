@@ -16,6 +16,7 @@ const replace = require('gulp-replace');
 const gulpTerser = require('gulp-terser');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
+const terser = require('gulp-terser');
 
 // Paths to project folders
 
@@ -54,6 +55,17 @@ const paths = {
 // SCSS to CSS
 function scss(callback) {
 	return src(paths.src.scss).pipe(sass().on('error', sass.logError)).pipe(gulpautoprefixer()).pipe(dest(paths.src.css)).pipe(browsersync.stream());
+	callback();
+}
+
+// css
+function css(callback) {
+	return src(paths.src.scss).pipe(sass().on('error', sass.logError)).pipe(postcss([autoprefixer(), cssnano()])).pipe(dest(paths.dist.css)).pipe(browsersync.stream());
+	callback();
+}
+// js
+function js(callback) {
+	return src(paths.src.js).pipe(gulpTerser()).pipe(dest(paths.dist.js));
 	callback();
 }
 
@@ -154,7 +166,7 @@ function watchTask() {
 exports.default = series(fileincludeTask, browsersyncServe, watchTask);
 
 // Build Task for Dist
-exports.build = series(parallel(cleanDist), images, fonts, vendorJs, copyLibs, cleanTemp);
+exports.build = series(parallel(cleanDist), css, js, images, fonts, copyLibs, cleanTemp);
 
 // export tasks
 exports.scss = scss;
