@@ -3,14 +3,14 @@ import React from 'react';
 
 const LangNav = () => {
   return (
-    <div class="bg-light py-1">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-12 text-center text-md-start"><span>Super Value Deals - Save more with coupons</span></div>
-				<div class="col-6 text-end d-none d-md-block">
-					<div class="dropdown selectBox">
-						<a class="dropdown-toggle selectValue text-reset" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
-							<span class="me-2">
+    <div className="bg-light py-1">
+		<div className="container">
+			<div className="row">
+				<div className="col-md-6 col-12 text-center text-md-start"><span>Super Value Deals - Save more with coupons</span></div>
+				<div className="col-6 text-end d-none d-md-block">
+					<div className="dropdown selectBox">
+						<a className="dropdown-toggle selectValue text-reset" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
+							<span className="me-2">
 								<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<g clip-path="url(#selectedlang)">
 										<path d="M0 0.5H16V12.5H0V0.5Z" fill="#012169" />
@@ -32,10 +32,10 @@ const LangNav = () => {
 							English
 						</a>
 
-						<ul class="dropdown-menu">
+						<ul className="dropdown-menu">
 							<li>
-								<a class="dropdown-item" href="javascript:void(0)">
-									<span class="me-2">
+								<a className="dropdown-item" href="javascript:void(0)">
+									<span className="me-2">
 										<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<g clip-path="url(#selectedlang)">
 												<path d="M0 0.5H16V12.5H0V0.5Z" fill="#012169" />
@@ -58,8 +58,8 @@ const LangNav = () => {
 								</a>
 							</li>
 							<li>
-								<a class="dropdown-item" href="javascript:void(0)">
-									<span class="me-2">
+								<a className="dropdown-item" href="javascript:void(0)">
+									<span className="me-2">
 										<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<g clip-path="url(#clip0_5543_19751)">
 												<path d="M0 8.5H16V12.5H0V8.5Z" fill="#FFCE00" />
