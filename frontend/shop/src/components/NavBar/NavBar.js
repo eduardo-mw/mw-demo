@@ -7,7 +7,7 @@ const NavBar = (props) => {
   return (
     <div className="border-bototm">
       <LangNav />
-      <UtilNav />
+      <UtilNav cartCount="10"/>
       <PrimaryNav />
     </div>
   );

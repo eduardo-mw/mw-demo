@@ -2,7 +2,7 @@
 import React from 'react';
 import logo from "../../assets/images/logo/freshcart-logo.svg";
 
-const UtilNav = () => {
+const UtilNav = (props) => {
   return (
     <div className="py-5">
 		<div className="container">
@@ -111,7 +111,7 @@ const UtilNav = () => {
 									<path d="M16 10a4 4 0 0 1-8 0"></path>
 								</svg>
 								<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-									1
+									{props.cartCount}
 									<span className="visually-hidden">unread messages</span>
 								</span>
 							</a>
