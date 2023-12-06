@@ -1,10 +1,13 @@
 import React from "react";
+import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
  
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome to The Home Page</h1>
-        </div>
+        <main>
+            <section className="my-lg-14 my-8">
+                <ProductDisplay />
+            </section>
+        </main>
     );
 };
  
