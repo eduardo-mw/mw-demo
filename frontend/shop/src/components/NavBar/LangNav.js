@@ -12,7 +12,7 @@ const LangNav = () => {
 						<a className="dropdown-toggle selectValue text-reset" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
 							<span className="me-2">
 								<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<g clip-path="url(#selectedlang)">
+									<g clipPath="url(#selectedlang)">
 										<path d="M0 0.5H16V12.5H0V0.5Z" fill="#012169" />
 										<path d="M1.875 0.5L7.975 5.025L14.05 0.5H16V2.05L10 6.525L16 10.975V12.5H14L8 8.025L2.025 12.5H0V11L5.975 6.55L0 2.1V0.5H1.875Z" fill="white" />
 										<path
@@ -37,7 +37,7 @@ const LangNav = () => {
 								<a className="dropdown-item" href="javascript:void(0)">
 									<span className="me-2">
 										<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<g clip-path="url(#selectedlang)">
+											<g clipPath="url(#selectedlang)">
 												<path d="M0 0.5H16V12.5H0V0.5Z" fill="#012169" />
 												<path d="M1.875 0.5L7.975 5.025L14.05 0.5H16V2.05L10 6.525L16 10.975V12.5H14L8 8.025L2.025 12.5H0V11L5.975 6.55L0 2.1V0.5H1.875Z" fill="white" />
 												<path
@@ -61,7 +61,7 @@ const LangNav = () => {
 								<a className="dropdown-item" href="javascript:void(0)">
 									<span className="me-2">
 										<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<g clip-path="url(#clip0_5543_19751)">
+											<g clipPath="url(#clip0_5543_19751)">
 												<path d="M0 8.5H16V12.5H0V8.5Z" fill="#FFCE00" />
 												<path d="M0 0.5H16V4.5H0V0.5Z" fill="black" />
 												<path d="M0 4.5H16V8.5H0V4.5Z" fill="#DD0000" />
