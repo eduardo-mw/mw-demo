@@ -1,5 +1,6 @@
 
 import React from 'react';
+import logo from "../../assets/images/logo/freshcart-logo.svg";
 
 const UtilNav = () => {
   return (
@@ -8,11 +9,11 @@ const UtilNav = () => {
 			<div className="row w-100 align-items-center gx-lg-2 gx-0">
 				<div className="col-xxl-2 col-lg-3 col-md-6 col-5">
 					<a className="navbar-brand d-none d-lg-block" href="./index.html">
-						<img src="./assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template" />
+						<img src={logo} alt="eCommerce HTML Template" />
 					</a>
 					<div className="d-flex justify-content-between w-100 d-lg-none">
 						<a className="navbar-brand" href="./index.html">
-							<img src="./assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template" />
+							<img src={logo} alt="eCommerce HTML Template" />
 						</a>
 					</div>
 				</div>

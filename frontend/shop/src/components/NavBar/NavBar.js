@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../assets/images/logo/freshcart-logo.svg";
 import UtilNav from "./UtilNav";
 import LangNav from "./LangNav";
 import PrimaryNav from "./PrimaryNav";
