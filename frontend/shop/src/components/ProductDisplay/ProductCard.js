@@ -8,8 +8,8 @@ const ProductCard = (props) => {
           <div className="text-center position-relative">
             <a href="#!">
               <img
-                src="assets/images/products/product-img-1.jpg"
-                alt="Grocery Ecommerce Template"
+                src={props.productImage}
+                alt={props.productTitle}
                 className="mb-3 img-fluid"
               />
             </a>
