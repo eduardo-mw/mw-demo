@@ -1,12 +1,11 @@
 import React from 'react';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-
 import Home from "./pages";
 import Checkout from "./pages/checkout";
 import ThankYou from "./pages/thankyou";
@@ -14,7 +13,7 @@ import ThankYou from "./pages/thankyou";
 function App() {
   return (
     <Router>
-      <NavBar />
+      <NavBar cartTotalItems="10"/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/checkout" element={<Checkout />} />
