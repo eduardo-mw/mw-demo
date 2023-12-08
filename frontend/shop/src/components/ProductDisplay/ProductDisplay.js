@@ -1,15 +1,15 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import productImageApples from "../../assets/images/products/product-img-apples.jpg";
-import productImageBananas from "../../assets/images/products/product-img-bananas.jpg";
-import productImageBeets from "../../assets/images/products/product-img-beets.jpg";
-import productImageCornFlakes from "../../assets/images/products/product-img-corn-flakes.jpg";
-import productImageKiwis from "../../assets/images/products/product-img-kiwis.jpg";
-import productImageLays from "../../assets/images/products/product-img-lays.jpg";
-import productImageNuttyChips from "../../assets/images/products/product-img-nutty-chips.jpg";
-import productImagePineapples from "../../assets/images/products/product-img-pineapples.jpg";
-import productImagePopcorn from "../../assets/images/products/product-img-popcorn.jpg";
-import productImageYogurt from "../../assets/images/products/product-img-yogurt.jpg";
+import productImageApples from "../../assets/images/products/product-img-15.jpg";
+import productImageBananas from "../../assets/images/products/product-img-18.jpg";
+import productImageBeets from "../../assets/images/products/product-img-19.jpg";
+import productImageCornFlakes from "../../assets/images/products/product-img-8.jpg";
+import productImageKiwis from "../../assets/images/products/product-img-17.jpg";
+import productImageLays from "../../assets/images/products/product-img-4.jpg";
+import productImageNuttyChips from "../../assets/images/products/product-img-14.jpg";
+import productImagePineapples from "../../assets/images/products/product-img-16.jpg";
+import productImagePopcorn from "../../assets/images/products/product-img-5.jpg";
+import productImageYogurt from "../../assets/images/products/product-img-6.jpg";
 
 
 const ProductDisplay = () => {

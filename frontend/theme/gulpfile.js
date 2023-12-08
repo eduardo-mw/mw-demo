@@ -42,13 +42,13 @@ const paths = {
 		basetemp: './.temp',
 	},
 	dist: {
-		basedist: '../shop/src/assets',
-		js: '../shop/src/assets/js',
-		vendorJs: '../shop/src/assets/js/vendors',
+		basedist: '../shop/public/assets',
+		js: '../shop/public/assets/js',
+		vendorJs: '../shop/public/assets/js/vendors',
 		images: '../shop/src/assets/images',
-		css: '../shop/src/assets/css',
-		fonts: '../shop/src/assets/fonts',
-		libs: '../shop/src/assets/libs',
+		css: '../shop/public/assets/css',
+		fonts: '../shop/public/assets/fonts',
+		libs: '../shop/public/assets/libs',
 	},
 };
 
