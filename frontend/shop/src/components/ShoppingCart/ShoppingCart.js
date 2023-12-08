@@ -3,7 +3,7 @@ import React from "react";
 const ShoppingCart = () => {
   return (
     <div
-      className="offcanvas offcanvas-end show"
+      className="offcanvas offcanvas-end"
       tabIndex="-1"
       id="offcanvasRight"
       aria-labelledby="offcanvasRightLabel"
