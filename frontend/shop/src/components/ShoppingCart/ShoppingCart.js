@@ -4,7 +4,7 @@ const ShoppingCart = () => {
   return (
     <div
       className="offcanvas offcanvas-end show"
-      tabindex="-1"
+      tabIndex="-1"
       id="offcanvasRight"
       aria-labelledby="offcanvasRightLabel"
       aria-modal="true"
@@ -59,9 +59,9 @@ const ShoppingCart = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               className="feather feather-trash-2 text-success"
                             >
                               <polyline points="3 6 5 6 21 6"></polyline>
@@ -132,9 +132,9 @@ const ShoppingCart = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               className="feather feather-trash-2 text-success"
                             >
                               <polyline points="3 6 5 6 21 6"></polyline>
@@ -208,9 +208,9 @@ const ShoppingCart = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               className="feather feather-trash-2 text-success"
                             >
                               <polyline points="3 6 5 6 21 6"></polyline>
@@ -284,9 +284,9 @@ const ShoppingCart = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               className="feather feather-trash-2 text-success"
                             >
                               <polyline points="3 6 5 6 21 6"></polyline>
@@ -360,9 +360,9 @@ const ShoppingCart = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               className="feather feather-trash-2 text-success"
                             >
                               <polyline points="3 6 5 6 21 6"></polyline>
