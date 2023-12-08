@@ -26,12 +26,6 @@ const ShoppingCart = () => {
       </div>
       <div className="offcanvas-body">
         <div>
-          <div className="alert alert-danger p-2" role="alert">
-            You’ve got FREE delivery. Start
-            <a href="#!" className="alert-link">
-              checkout now!
-            </a>
-          </div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item py-3 ps-0 border-top">
               <div className="row align-items-center">
@@ -411,11 +405,11 @@ const ShoppingCart = () => {
             </li>
           </ul>
           <div className="d-flex justify-content-between mt-4">
-            <a href="#!" className="btn btn-primary">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="offcanvas" aria-label="Close">
               Continue Shopping
-            </a>
-            <a href="#!" className="btn btn-dark">
-              Update Cart
+            </button>
+            <a href="#!" className="btn btn-primary">
+              Checkout
             </a>
           </div>
         </div>
