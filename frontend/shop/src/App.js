@@ -8,7 +8,6 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "./pages";
-import Checkout from "./pages/checkout";
 import ThankYou from "./pages/thankyou";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       <ShoppingCart />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/checkout" element={<Checkout />} />
         <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
       <Footer />
