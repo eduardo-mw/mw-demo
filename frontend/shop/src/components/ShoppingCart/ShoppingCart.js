@@ -28,18 +28,22 @@ const ShoppingCart = (props) => {
       <div className="offcanvas-body">
         <div>
           <ul className="list-group list-group-flush">
-            {props.userCart.cart.forEach((product) => 
+            {props.userCart.cart.map((cartItem) => (
               <ShoppingCartItem
-                productID={product.productID}
-                productCategory={product.productCategory}
-                productTitle={product.productTitle}
-                productPrice={product.productPrice}
-                productImage={product.productImage}
+                key={cartItem.productID}
+                cartItem={cartItem}
+                userCart={props.userCart}
+                setUserCart={props.setUserCart}
+                productID={cartItem.productID}
+                productCategory={cartItem.productCategory}
+                productTitle={cartItem.productTitle}
+                productPrice={cartItem.productPrice}
+                productImage={cartItem.productImage}
               />
-            )}
+            ))}
           </ul>
           <div className="d-flex justify-content-between mt-4">
-          <button type="button" class="btn btn-dark" data-bs-dismiss="offcanvas" aria-label="Close">
+          <button type="button" className="btn btn-dark" data-bs-dismiss="offcanvas" aria-label="Close">
               Continue Shopping
             </button>
             <a href="#!" className="btn btn-primary">

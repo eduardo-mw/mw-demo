@@ -1,6 +1,12 @@
 import React from "react";
 
+
 const ProductCard = (props) => {
+
+  const cartChangeHandler = (event) => {
+    console.log("cartChangeHandler")
+  };
+  
   return (
     <div className="col">
       <div className="card card-product">
@@ -8,8 +14,8 @@ const ProductCard = (props) => {
           <div className="text-center position-relative">
             <a href="#!">
               <img
-                src={props.productImage}
-                alt={props.productTitle}
+                src={props.product.productImage}
+                alt={props.product.productTitle}
                 className="mb-3 img-fluid"
               />
             </a>
@@ -53,7 +59,7 @@ const ProductCard = (props) => {
           </div>
           <div className="text-small mb-1">
             <a href="#!" className="text-decoration-none text-muted">
-              <small>{props.productCategory}</small>
+              <small>{props.product.productCategory}</small>
             </a>
           </div>
           <h2 className="fs-6">
@@ -61,7 +67,7 @@ const ProductCard = (props) => {
               href="./pages/shop-single.html"
               className="text-inherit text-decoration-none"
             >
-              {props.productTitle}
+              {props.product.productTitle}
             </a>
           </h2>
           <div>
@@ -76,10 +82,10 @@ const ProductCard = (props) => {
           </div>
           <div className="d-flex justify-content-between align-items-center mt-3">
             <div>
-              <span className="text-dark">${props.productPrice}</span>
+              <span className="text-dark">${props.product.productPrice}</span>
             </div>
             <div>
-              <a href="#!" className="btn btn-primary btn-sm">
+              <button className="btn btn-primary btn-sm" onClick={cartChangeHandler}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -96,7 +102,7 @@ const ProductCard = (props) => {
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                 </svg>
                 Add
-              </a>
+              </button>
             </div>
           </div>
         </div>

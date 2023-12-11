@@ -66,7 +66,7 @@ const shoppingCartItem = (props) => {
         </div>
       </div>
       <div className="col-2 text-lg-end text-start text-md-end col-md-2">
-        <span className="fw-bold">{props.productPrice}</span>
+        <span className="fw-bold">${props.productPrice}</span>
       </div>
     </div>
   </li>);
