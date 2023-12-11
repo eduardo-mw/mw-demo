@@ -106,7 +106,11 @@ const ProductDisplay = (props) => {
       <div className="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3">
         {products.map((product) => (
           <div className="col" key={product.productID}>
-            <ProductCard product={product} userCart={props.userCart} setUserCart={props.setUserCart} />
+            <ProductCard
+              product={product}
+              userCart={props.userCart}
+              setUserCart={props.setUserCart}
+            />
           </div>
         ))}
       </div>

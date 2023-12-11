@@ -1,12 +1,12 @@
 import React from "react";
 
-
 const ProductCard = (props) => {
-
   const cartChangeHandler = (event) => {
-    props.setUserCart((prevUserCart)=> {return {sessionID:"test",cart:[props.product]}});
+    props.setUserCart((prevUserCart) => {
+      return { sessionID: "test", cart: [props.product] };
+    });
   };
-  
+
   return (
     <div className="col">
       <div className="card card-product">
@@ -85,7 +85,10 @@ const ProductCard = (props) => {
               <span className="text-dark">${props.product.productPrice}</span>
             </div>
             <div>
-              <button className="btn btn-primary btn-sm" onClick={cartChangeHandler}>
+              <button
+                className="btn btn-primary btn-sm"
+                onClick={cartChangeHandler}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

@@ -10,8 +10,7 @@ import productImageNuttyChips from "./assets/images/products/product-img-14.jpg"
 function App() {
   const [userCart, setUserCart] = useState({
     sessionID: "abcd123",
-    cart: [
-    ],
+    cart: [],
   });
 
   return (

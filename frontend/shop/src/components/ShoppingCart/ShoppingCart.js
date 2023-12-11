@@ -43,7 +43,12 @@ const ShoppingCart = (props) => {
             ))}
           </ul>
           <div className="d-flex justify-content-between mt-4">
-          <button type="button" className="btn btn-dark" data-bs-dismiss="offcanvas" aria-label="Close">
+            <button
+              type="button"
+              className="btn btn-dark"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            >
               Continue Shopping
             </button>
             <a href="#!" className="btn btn-primary">
