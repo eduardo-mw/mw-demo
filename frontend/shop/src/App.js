@@ -11,13 +11,12 @@ import Home from "./pages";
 import ThankYou from "./pages/thankyou";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [userCart, setUserCart] = useState([]);
+  const [userCart, setUserCart] = useState({sessionID: "", cart: []});
 
   return (
     <Router>
       <NavBar/>
-      <ShoppingCart />
+      <ShoppingCart userCart={userCart} setUserCart={setUserCart}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/thankyou" element={<ThankYou />} />

@@ -1,7 +1,7 @@
 import React from "react";
 import ShoppingCartItem from "./ShoppingCartItem";
 
-const ShoppingCart = () => {
+const ShoppingCart = (props) => {
   return (
     <div
       className="offcanvas offcanvas-end"
@@ -28,7 +28,15 @@ const ShoppingCart = () => {
       <div className="offcanvas-body">
         <div>
           <ul className="list-group list-group-flush">
-            <ShoppingCartItem/>
+            {props.userCart.cart.forEach((product) => 
+              <ShoppingCartItem
+                productID={product.productID}
+                productCategory={product.productCategory}
+                productTitle={product.productTitle}
+                productPrice={product.productPrice}
+                productImage={product.productImage}
+              />
+            )}
           </ul>
           <div className="d-flex justify-content-between mt-4">
           <button type="button" class="btn btn-dark" data-bs-dismiss="offcanvas" aria-label="Close">
