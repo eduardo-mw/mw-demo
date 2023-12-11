@@ -74,7 +74,7 @@ const UtilNav = (props) => {
 							</a>
 						</div>
 						<div className="list-inline-item me-5">
-							<a href="#!" className="text-muted" data-bs-toggle="modal" data-bs-target="#userModal">
+							<a href="/" className="text-muted" data-bs-toggle="modal" data-bs-target="#userModal">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="20"
