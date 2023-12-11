@@ -4,7 +4,7 @@ import React from "react";
 const ProductCard = (props) => {
 
   const cartChangeHandler = (event) => {
-    console.log("cartChangeHandler")
+    props.setUserCart((prevUserCart)=> {return {sessionID:"test",cart:[props.product]}});
   };
   
   return (
