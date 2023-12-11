@@ -1,7 +1,37 @@
 import React from "react";
 import ShoppingCartItem from "./ShoppingCartItem";
+import { useNavigate } from "react-router-dom";
 
 const ShoppingCart = (props) => {
+
+  let navigate = useNavigate();
+
+  const handleCheckout = () => {
+    const data = props.userCart;
+    console.log(data);
+
+    fetch("http://localhost:5051/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(response.json())
+          navigate("/thankyou");
+        } else {
+          throw new Error("Error submitting data");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        navigate("/thankyou")
+      });
+  };
+
+
   return (
     <div
       className="offcanvas offcanvas-end"
@@ -51,9 +81,9 @@ const ShoppingCart = (props) => {
             >
               Continue Shopping
             </button>
-            <a href="#!" className="btn btn-primary">
+            <button className="btn btn-primary" onClick={handleCheckout}>
               Checkout
-            </a>
+            </button>
           </div>
         </div>
       </div>

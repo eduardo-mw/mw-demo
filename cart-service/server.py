@@ -3,6 +3,7 @@ import requests
 import logging
 import os
 from pymongo import MongoClient
+from flask_cors import CORS
 
 if os.environ.get("ENV", "dev") == "prod":
     from middleware import MwTracker
@@ -15,6 +16,7 @@ else:
     db_port = 5053
 
 app = Flask(__name__)
+CORS(app)
 app.secret_key = "asdfji281lf9jf0fj02"
 
 # Schema for the cart
@@ -49,6 +51,14 @@ def home(session_id):
         }
     }, 200
 
+
+@app.route("/checkout", methods=["POST"])
+def checkout():
+    print(request.json)
+    url = "http://localhost:5050/send"
+    data = {"email": "test@test.com"}
+    response = requests.post(url, json=data)
+    return {"email": response.json()["email"]}, 200
 
 @app.route("/add", methods=["POST"])
 def about():
