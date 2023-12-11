@@ -11,14 +11,6 @@ function App() {
   const [userCart, setUserCart] = useState({
     sessionID: "abcd123",
     cart: [
-      {
-        productID: 1,
-        productCategory: "Snacks and Munchies",
-        productTitle: "Johns Chips",
-        productPrice: "100",
-        productImage: productImageNuttyChips,
-        quantity: 1,
-      },
     ],
   });
 
