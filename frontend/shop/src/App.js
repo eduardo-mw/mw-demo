@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages";
+import ThankYou from "./pages/thankyou";
+import productImageNuttyChips from "./assets/images/products/product-img-14.jpg";
 
 function App() {
+  const [userCart, setUserCart] = useState({
+    sessionID: "abcd123",
+    cart: [],
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <ShoppingCart userCart={userCart} setUserCart={setUserCart} />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home userCart={userCart} setUserCart={setUserCart} />}
+        />
+        <Route path="/thankyou" element={<ThankYou />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 

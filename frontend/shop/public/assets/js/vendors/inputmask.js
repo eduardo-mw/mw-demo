@@ -1,0 +1,1 @@
+!function(){var e=document.getElementById("card-mask");if(e)new IMask(e,{mask:"0000-0000-0000-0000"});var a=document.getElementById("digit-mask");if(a)new IMask(a,{mask:"000"})}();

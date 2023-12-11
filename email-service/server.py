@@ -9,6 +9,9 @@ if os.environ.get("ENV", "dev") == "prod":
 
 app = Flask(__name__)
 
+@app.route("/health", methods=["GET"])
+def health():
+    return {"status": "healthy"}, 200
 
 @app.route("/send", methods=["POST"])
 def home():
