@@ -8,11 +8,11 @@ const UtilNav = (props) => {
 		<div className="container">
 			<div className="row w-100 align-items-center gx-lg-2 gx-0">
 				<div className="col-xxl-2 col-lg-3 col-md-6 col-5">
-					<a className="navbar-brand d-none d-lg-block" href="./index.html">
+					<a className="navbar-brand d-none d-lg-block" href="/">
 						<img src={logo} alt="eCommerce HTML Template" />
 					</a>
 					<div className="d-flex justify-content-between w-100 d-lg-none">
-						<a className="navbar-brand" href="./index.html">
+						<a className="navbar-brand" href="/">
 							<img src={logo} alt="eCommerce HTML Template" />
 						</a>
 					</div>
@@ -52,7 +52,7 @@ const UtilNav = (props) => {
 				<div className="col-lg-2 col-xxl-2 text-end col-md-6 col-7">
 					<div className="list-inline">
 						<div className="list-inline-item me-5">
-							<a href="./pages/shop-wishlist.html" className="text-muted position-relative">
+							<a href="/" className="text-muted position-relative">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="20"
