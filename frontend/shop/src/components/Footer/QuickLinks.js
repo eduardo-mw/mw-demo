@@ -9,50 +9,50 @@ const QuickLinks = () => {
           <div className="col-6">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Vegetables &amp; Fruits
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   {" "}
                   Breakfast &amp; instant food
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   {" "}
                   Bakery &amp; Biscuits
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Atta, rice &amp; dal
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Sauces &amp; spreads
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Organic &amp; gourmet
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   {" "}
                   Baby care
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Cleaning essentials
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Personal care
                 </a>
               </li>
@@ -61,50 +61,50 @@ const QuickLinks = () => {
           <div className="col-6">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Dairy, bread &amp; eggs
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   {" "}
                   Cold drinks &amp; juices
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   {" "}
                   Tea, coffee &amp; drinks
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Masala, oil &amp; more
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Chicken, meat &amp; fish
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Paan corner
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   {" "}
                   Pharma &amp; wellness
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Home &amp; office
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Pet care
                 </a>
               </li>
@@ -119,12 +119,12 @@ const QuickLinks = () => {
 
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Company
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   About
                 </a>
               </li>
@@ -134,12 +134,12 @@ const QuickLinks = () => {
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Help Center
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Our Value
                 </a>
               </li>
@@ -149,22 +149,22 @@ const QuickLinks = () => {
             <h6 className="mb-4">For Consumers</h6>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Payments
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Shipping
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Product Returns
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   FAQ
                 </a>
               </li>
@@ -179,27 +179,27 @@ const QuickLinks = () => {
             <h6 className="mb-4">Become a Shopper</h6>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Shopper Opportunities
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Become a Shopper
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Earnings
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Ideas &amp; Guides
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   New Retailers
                 </a>
               </li>
@@ -209,27 +209,27 @@ const QuickLinks = () => {
             <h6 className="mb-4">Freshcart programs</h6>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Freshcart programs
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Gift Cards
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Promos &amp; Coupons
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Freshcart Ads
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#!" className="nav-link">
+                <a href="/" className="nav-link">
                   Careers
                 </a>
               </li>

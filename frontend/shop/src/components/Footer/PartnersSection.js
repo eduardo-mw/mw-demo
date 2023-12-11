@@ -17,19 +17,19 @@ const PartnersSection = () => {
           <ul className="list-inline mb-0">
             <li className="list-inline-item text-dark">Payment Partners</li>
             <li className="list-inline-item">
-              <a href="#!"><img src={amazonLogo} alt=""/></a>
+              <a href="/"><img src={amazonLogo} alt=""/></a>
             </li>
             <li className="list-inline-item">
-              <a href="#!"><img src={americanExpressLogo} alt=""/></a>
+              <a href="/"><img src={americanExpressLogo} alt=""/></a>
             </li>
             <li className="list-inline-item">
-              <a href="#!"><img src={masterCardLogo} alt=""/></a>
+              <a href="/"><img src={masterCardLogo} alt=""/></a>
             </li>
             <li className="list-inline-item">
-              <a href="#!"><img src={paypalLogo} alt=""/></a>
+              <a href="/"><img src={paypalLogo} alt=""/></a>
             </li>
             <li className="list-inline-item">
-              <a href="#!"><img src={visaLogo} alt=""/></a>
+              <a href="/"><img src={visaLogo} alt=""/></a>
             </li>
           </ul>
         </div>
@@ -37,9 +37,9 @@ const PartnersSection = () => {
           <ul className="list-inline mb-0 text-lg-end text-center">
             <li className="list-inline-item mb-2 mb-md-0 text-dark">Get deliveries with FreshCart</li>
             <li className="list-inline-item ms-4">
-              <a href="#!"> <img src={appStoreLogo} alt="" style={{ width: '140px' }}/></a></li>
+              <a href="/"> <img src={appStoreLogo} alt="" style={{ width: '140px' }}/></a></li>
             <li className="list-inline-item">
-              <a href="#!"> <img src={googlePlayLogo} alt="" style={{ width: '140px' }}/></a></li>
+              <a href="/"> <img src={googlePlayLogo} alt="" style={{ width: '140px' }}/></a></li>
           </ul>
         </div>
       </div>
