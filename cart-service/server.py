@@ -35,6 +35,9 @@ client = MongoClient(db_host, db_port)
 db = client["cart_db"]
 carts = db["carts"]
 
+@app.route("/health", methods=["GET"])
+def health():
+    return {"status": "healthy"}, 200
 
 @app.route("/cart/<session_id>", methods=["GET"])
 def home(session_id):
@@ -55,7 +58,7 @@ def home(session_id):
 @app.route("/checkout", methods=["POST"])
 def checkout():
     print(request.json)
-    url = "http://localhost:5050/send"
+    url = "http://email-service:5000/send"
     data = {"email": "test@test.com"}
     response = requests.post(url, json=data)
     return {"email": response.json()["email"]}, 200
