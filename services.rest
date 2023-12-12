@@ -2,7 +2,39 @@
 GET http://localhost:5051/api/health
 ###
 GET http://localhost:5051/api/cart/session/abc123
+###
+POST http://localhost:5051/api/cart/session/abc123/add
 Content-Type: application/json
+
+{
+    "product":
+        {
+            "productID": 2,
+            "productCategory": "Fruits",
+            "productTitle": "Organic Apples",
+            "productPrice": "50",
+            "productImage": "/image/organic-apples.jpg",
+            "quantity": 1
+        }
+    
+}
+
+###
+POST http://localhost:5051/api/cart/session/abc123/remove
+Content-Type: application/json
+
+{
+    "product":
+        {
+            "productID": 2,
+            "productCategory": "Fruits",
+            "productTitle": "Organic Apples",
+            "productPrice": "50",
+            "productImage": "/image/organic-apples.jpg",
+            "quantity": 1,
+        }
+    
+}
 
 ### Email Service 
 GET http://localhost:5050/api/health
