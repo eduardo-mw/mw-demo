@@ -48,6 +48,14 @@ client = MongoClient(db_host, db_port)
 db = client["cart_db"]
 carts = db["carts"]
 
+def get_cart(session_id):
+    db_result = carts.find_one({"sessionID": session_id})
+    return db_result
+
+def update_cart(session_id, cart):
+    carts.update_one({"sessionID": session_id}, {"$set": {"cart": cart}})
+    return True
+
 
 @app.route("/api/health", methods=["GET"])
 def health():
@@ -56,19 +64,41 @@ def health():
 
 @app.route("/api/cart/session/<session_id>", methods=["GET"])
 def cart_get(session_id):
-    db_result = carts.find_one({"sessionID": session_id})
-    if db_result is None:
+    session_cart = get_cart(session_id)
+    if session_cart is None:
         return {"sessionID":session_id, "cart":None}, 404
 
     return {
-        "sessionID": db_result["sessionID"],
-        "cart": db_result["cart"],
+        "sessionID": session_cart["sessionID"],
+        "cart": session_cart["cart"],
     }, 200
 
 # Todo: Implement adding functionality
 @app.route("/api/cart/session/<session_id>/add", methods=["POST"])
 def cart_add(session_id):
-    return {"status": "Not Implemented"}, 501
+    session_cart = get_cart(session_id)
+    
+    # If sesion cart is empty add the product to the cart as the first item
+    if session_cart is None:
+        carts.insert_one({"sessionID": session_id, "cart": [request.json["product"]]})
+        print(session_cart)
+        return get_cart(session_id), 200
+
+    # If session cart is not empty, check if the product is already in the cart and update the quantity
+    else:
+        cart = session_cart["cart"]
+        product = request.json["product"]
+        product_in_cart = False
+        for item in cart:
+            if item["productID"] == product["productID"]:
+                item["quantity"] += product["quantity"]
+                product_in_cart = True
+                break
+        if not product_in_cart:
+            cart.append(product)
+        update_cart(session_id, cart)
+
+    return get_cart(session_id), 200
 
 # Todo: Implement removing functionality
 @app.route("/api/cart/session/<session_id>/remove", methods=["POST"])
