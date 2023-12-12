@@ -55,30 +55,28 @@ def health():
 
 
 @app.route("/api/cart/session/<session_id>", methods=["GET"])
-def home(session_id):
+def cart_get(session_id):
     db_result = carts.find_one({"sessionID": session_id})
     if db_result is None:
-        return {"cart": None}, 404
+        return {"sessionID":session_id, "cart":None}, 404
 
     return {
-        "cart": {
-            "sessionID": db_result["sessionID"],
-            "items": db_result["items"],
-        }
+        "sessionID": db_result["sessionID"],
+        "cart": db_result["cart"],
     }, 200
 
 # Todo: Implement adding functionality
 @app.route("/api/cart/session/<session_id>/add", methods=["POST"])
-def add_to_cart(session_id):
+def cart_add(session_id):
     return {"status": "Not Implemented"}, 501
 
 # Todo: Implement removing functionality
 @app.route("/api/cart/session/<session_id>/remove", methods=["POST"])
-def remove_from_cart(session_id):
+def cart_remove(session_id):
     return {"status": "Not Implemented"}, 501
     
 @app.route("/api/cart/session/<session_id>/checkout", methods=["POST"])
-def checkout():
+def cart_checkout():
     print(request.json)
     url = "http://email-service:5000/send"
     data = {"email": "test@test.com"}
