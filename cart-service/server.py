@@ -56,8 +56,6 @@ def health():
 
 @app.route("/api/cart/session/<session_id>", methods=["GET"])
 def home(session_id):
-    logging.info("Cart Request received")
-
     db_result = carts.find_one({"sessionID": session_id})
     if db_result is None:
         return {"cart": None}, 404
@@ -69,11 +67,16 @@ def home(session_id):
         }
     }, 200
 
+# Todo: Implement adding functionality
 @app.route("/api/cart/session/<session_id>/add", methods=["POST"])
 def add_to_cart(session_id):
+    return {"status": "Not Implemented"}, 501
+
+# Todo: Implement removing functionality
+@app.route("/api/cart/session/<session_id>/remove", methods=["POST"])
+def remove_from_cart(session_id):
+    return {"status": "Not Implemented"}, 501
     
-
-
 @app.route("/api/cart/session/<session_id>/checkout", methods=["POST"])
 def checkout():
     print(request.json)
