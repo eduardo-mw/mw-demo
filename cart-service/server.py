@@ -21,12 +21,25 @@ app.secret_key = "asdfji281lf9jf0fj02"
 
 # Schema for the cart
 # {
-#    "_id": "fafji10jrrja-af-fj",
-#    "session_id": "asdfji281lf9jf0fj02",
-#    "items": [
-#       {"itemID": "<itemID>", "quantity": "<quantity>", "price": "<price>"},
-#       {"itemID": "<itemID>", "quantity": "<quantity>", "price": "<price>"},
-#              ]
+#     "sessionID": "1234",
+#     "cart": [
+#         {
+#             "productID": 1,
+#             "productCategory": "Snacks and Munchies",
+#             "productTitle": "Johns Chips",
+#             "productPrice": "100",
+#             "productImage": "/image/johns-chips.jpg",
+#             "quantity": 1,
+#         },
+#         {
+#             "productID": 2,
+#             "productCategory": "Fruits",
+#             "productTitle": "Organic Apples",
+#             "productPrice": "50",
+#             "productImage": "/image/organic-apples.jpg",
+#             "quantity": 1,
+#         },
+#     ],
 # }
 
 
@@ -35,9 +48,11 @@ client = MongoClient(db_host, db_port)
 db = client["cart_db"]
 carts = db["carts"]
 
+
 @app.route("/health", methods=["GET"])
 def health():
     return {"status": "healthy"}, 200
+
 
 @app.route("/cart/<session_id>", methods=["GET"])
 def home(session_id):
@@ -62,6 +77,7 @@ def checkout():
     data = {"email": "test@test.com"}
     response = requests.post(url, json=data)
     return {"email": response.json()["email"]}, 200
+
 
 @app.route("/add", methods=["POST"])
 def about():
