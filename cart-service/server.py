@@ -48,9 +48,11 @@ client = MongoClient(db_host, db_port)
 db = client["cart_db"]
 carts = db["carts"]
 
+
 def get_cart(session_id):
     db_result = carts.find_one({"sessionID": session_id})
     return db_result
+
 
 def update_cart(session_id, cart):
     carts.update_one({"sessionID": session_id}, {"$set": {"cart": cart}})
@@ -66,18 +68,19 @@ def health():
 def cart_get(session_id):
     session_cart = get_cart(session_id)
     if session_cart is None:
-        return {"sessionID":session_id, "cart":None}, 404
+        return {"sessionID": session_id, "cart": None}, 404
 
     return {
         "sessionID": session_cart["sessionID"],
         "cart": session_cart["cart"],
     }, 200
 
+
 # Todo: Implement adding functionality
 @app.route("/api/cart/session/<session_id>/add", methods=["POST"])
 def cart_add(session_id):
     session_cart = get_cart(session_id)
-    
+
     # If sesion cart is empty add the product to the cart as the first item
     if session_cart is None:
         carts.insert_one({"sessionID": session_id, "cart": [request.json["product"]]})
@@ -100,11 +103,13 @@ def cart_add(session_id):
 
     return get_cart(session_id), 200
 
+
 # Todo: Implement removing functionality
 @app.route("/api/cart/session/<session_id>/remove", methods=["POST"])
 def cart_remove(session_id):
     return {"status": "Not Implemented"}, 501
-    
+
+
 @app.route("/api/cart/session/<session_id>/checkout", methods=["POST"])
 def cart_checkout():
     print(request.json)
