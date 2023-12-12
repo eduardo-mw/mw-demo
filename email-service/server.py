@@ -9,11 +9,11 @@ if os.environ.get("ENV", "dev") == "prod":
 
 app = Flask(__name__)
 
-@app.route("/health", methods=["GET"])
+@app.route("/api/health", methods=["GET"])
 def health():
     return {"status": "healthy"}, 200
 
-@app.route("/send", methods=["POST"])
+@app.route("/api/email/send", methods=["POST"])
 def home():
     if request.method == "POST":
         if request.is_json:

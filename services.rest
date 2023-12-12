@@ -1,18 +1,15 @@
-POST http://localhost:5050/send
+### Cart Service
+
+GET http://localhost:5051/api/health
+
+
+### Email Service 
+GET http://localhost:5050/api/health
+###
+POST http://localhost:5050/api/email/send
 Content-Type: application/json
 
 {
     "email": "test@test.com"
 }
 
-###
-GET http://localhost:5051/cart/asdfjl102938
-
-###
-POST http://localhost:5051/add
-Content-Type: application/json
-
-{
-    "sessionID": "asdfjl102938",
-    "item": {"itemID": "1", "itemName":"Banana", "quantity": 1, "price": 1.00}
-}

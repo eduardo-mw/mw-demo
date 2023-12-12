@@ -49,12 +49,12 @@ db = client["cart_db"]
 carts = db["carts"]
 
 
-@app.route("/health", methods=["GET"])
+@app.route("/api/health", methods=["GET"])
 def health():
     return {"status": "healthy"}, 200
 
 
-@app.route("/cart/<session_id>", methods=["GET"])
+@app.route("/api/cart/session/<session_id>", methods=["GET"])
 def home(session_id):
     logging.info("Cart Request received")
 
@@ -69,35 +69,18 @@ def home(session_id):
         }
     }, 200
 
+@app.route("/api/cart/session/<session_id>/add", methods=["POST"])
+def add_to_cart(session_id):
+    
 
-@app.route("/checkout", methods=["POST"])
+
+@app.route("/api/cart/session/<session_id>/checkout", methods=["POST"])
 def checkout():
     print(request.json)
     url = "http://email-service:5000/send"
     data = {"email": "test@test.com"}
     response = requests.post(url, json=data)
     return {"email": response.json()["email"]}, 200
-
-
-@app.route("/add", methods=["POST"])
-def about():
-    session_id = request.json["sessionID"]
-    item = request.json["item"]
-
-    cart = carts.find_one({"sessionID": session_id})
-    if cart:
-        items = cart["items"]
-        for i, cart_item in enumerate(items):
-            if cart_item["itemID"] == item["itemID"]:
-                items[i]["quantity"] = int(items[i]["quantity"]) + int(item["quantity"])
-                break
-        else:
-            items.append(item)
-        carts.update_one({"sessionID": session_id}, {"$set": {"items": items}})
-    else:
-        carts.insert_one({"sessionID": session_id, "items": [item]})
-
-    return {"sessionID": session_id, "itemAdded": item}, 200
 
 
 if __name__ == "__main__":
