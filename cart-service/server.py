@@ -85,7 +85,9 @@ def cart_add(session_id):
     if session_cart is None:
         carts.insert_one({"sessionID": session_id, "cart": [request.json["product"]]})
         print(session_cart)
-        return get_cart(session_id), 200
+        data = get_cart(session_id)
+        data.pop("_id")
+        return data, 200
 
     # If session cart is not empty, check if the product is already in the cart and update the quantity
     else:
@@ -101,7 +103,9 @@ def cart_add(session_id):
             cart.append(product)
         update_cart(session_id, cart)
 
-    return get_cart(session_id), 200
+    data = get_cart(session_id)
+    data.pop("_id")
+    return data, 200
 
 
 # Todo: Implement removing functionality
